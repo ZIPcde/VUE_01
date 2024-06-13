@@ -7,6 +7,10 @@ a {
     text-decoration: none;
 }
 
+/* button {
+  transform: scaleX(-1) rotate(180deg);
+} */
+
 .jost-font {
     font-family: "Jost", sans-serif;
     /* font-optical-sizing: auto; */
