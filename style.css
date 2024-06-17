@@ -427,3 +427,18 @@ time {
   font-size: 22px;
   color: #4D5053;
 }
+
+/* __________ blog __________ */
+
+.blog_header {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98.9vw;
+    max-width: 1920px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 457px;
+    background-color: #F4F0EC;
+}

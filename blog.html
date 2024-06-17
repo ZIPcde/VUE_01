@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interno кухонная мебель</title>
+    <title>Interno блог</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
@@ -13,16 +13,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="vue_home-work">
-        <div class="app" id="app">
-            <h2>VUE HomeWork</h2>
-            <button @click="applyStyle" :style="buttonStyle">Перевернуть</button>
-            <button @click="addNewElement">Добавить</button>
-    <ul>
-      <li v-for="(item, index) in items" :key="index" @click="removeElement(index)">{{ item }}</li>
-    </ul>
-        </div>
-    </div>
     <div class="lines">
         <!-- <div class="lines2"></div> -->
         <nav class="navHolder">
@@ -37,17 +27,17 @@
             </ul>
         </nav>
         <main>
-            <header class="header">
-                <div class="header_text">
+            <header class="blog_header">
+                <div class="blog_header_img-holder">
+                    <img class="blog_header_img" src="./img/blog_header.png" alt="blog_kitchen">
+                </div>
+                <div class="blog_header_text">
                     <h2 class="header_h2 dm-serif-display-sserif font_65">Пусть ваш дом <br> будет уникальным</h2>
                     <p class="jost-font font_22">Существует много вариаций Lorem Ipsum, <br> которые можно использовать</p>
                     <div class="header_btn-holder">
                         <p class="btn-start jost-font font_18">Начать</p>
                         <img src="./img/vector_right.svg" alt="arrow" class="btn-arrow">
                     </div>
-                </div>
-                <div class="header_img-holder">
-                    <img class="header_img" src="./img/Banner1.png" alt="kitchen">
                 </div>
             </header>
             <section class="section1">
@@ -216,30 +206,5 @@
             </section>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                buttonStyle: {
-        backgroundColor: 'blue',
-        color: 'white'},
-      items: ['Элемент списка 1', 'Элемент списка 2', 'Элемент списка 3']
-            },
-            methods: {
-                applyStyle() {
-      this.buttonStyle = {
-        transform: 'scaleX(-1) rotate(180deg)'
-      };
-    },
-    addNewElement() {
-      this.items.push('Новый элемент списка');
-    },
-    removeElement(index) {
-      this.items.splice(index, 1);
-    }
-            }
-        })
-    </script>
 </body>
 </html>
