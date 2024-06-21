@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="vue_home-work">
-        <div class="app" id="app">
-            <h2>VUE HomeWork</h2>
-            <button @click="applyStyle" :style="buttonStyle">Перевернуть</button>
-            <button @click="addNewElement">Добавить</button>
-    <ul>
-      <li v-for="(item, index) in items" :key="index" @click="removeElement(index)">{{ item }}</li>
-    </ul>
-        </div>
-    </div>
     <div class="lines">
+            <div id="app">
+                <div>
+                  <button @click="sortByPriceAsc">Сортировать по возрастанию цены</button>
+                  <button @click="sortByPriceDesc">Сортировать по убыванию цены</button>
+                </div>
+                <ul>
+                  <li v-for="product in sortedProducts" :key="product.id">
+                    {{ product.name }} - {{ product.price }}
+                  </li>
+                </ul>
+              </div>
         <!-- <div class="lines2"></div> -->
         <nav class="navHolder">
             <div class="logoHolder">
@@ -218,28 +219,30 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                buttonStyle: {
-        backgroundColor: 'blue',
-        color: 'white'},
-      items: ['Элемент списка 1', 'Элемент списка 2', 'Элемент списка 3']
-            },
-            methods: {
-                applyStyle() {
-      this.buttonStyle = {
-        transform: 'scaleX(-1) rotate(180deg)'
-      };
-    },
-    addNewElement() {
-      this.items.push('Новый элемент списка');
-    },
-    removeElement(index) {
-      this.items.splice(index, 1);
-    }
-            }
-        })
+      new Vue({
+        el: '#app',
+        data: {
+          products: [
+            { id: 1, name: 'Товар 1', price: 100 },
+            { id: 2, name: 'Товар 2', price: 75 },
+            { id: 3, name: 'Товар 3', price: 150 },
+            { id: 4, name: 'Товар 4', price: 200 },
+            { id: 5, name: 'Товар 5', price: 125 }
+          ],
+          sortedProducts: []
+        },
+        created() {
+          this.sortedProducts = [...this.products];
+        },
+        methods: {
+          sortByPriceAsc() {
+            this.sortedProducts = [...this.products].sort((a, b) => a.price - b.price);
+          },
+          sortByPriceDesc() {
+            this.sortedProducts = [...this.products].sort((a, b) => b.price - a.price);
+          }
+        }
+      });
     </script>
 </body>
 </html>
