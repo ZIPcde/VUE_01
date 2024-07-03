@@ -532,8 +532,33 @@ margin: 30px;
 
 /* blog_details */
 
+.blog_details-holder {
+
+}
+
+.blog_details-holder-flex {
+  width: 66.66%;
+}
+
+.main_news h2 {
+  
+}
+
+.blog_details_main_news-timeholder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+
+.main_news img {
+  width: 100%;
+  border-radius: 50px;
+}
+
 .blog_details-news-holder {
-  position: relative;
+  /* position: relative; */
 }
 
 .main_news {
