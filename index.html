@@ -15,7 +15,7 @@
 <body>
     <div class="lines">
             <div id="app">
-                <div>
+                <!-- <div>
                   <button @click="sortByPriceAsc">Сортировать по возрастанию цены</button>
                   <button @click="sortByPriceDesc">Сортировать по убыванию цены</button>
                 </div>
@@ -24,7 +24,7 @@
                     {{ product.name }} - {{ product.price }}
                   </li>
                 </ul>
-              </div>
+              </div> -->
         <!-- <div class="lines2"></div> -->
         <nav class="navHolder">
             <div class="logoHolder">
@@ -222,14 +222,6 @@
       new Vue({
         el: '#app',
         data: {
-          products: [
-            { id: 1, name: 'Товар 1', price: 100 },
-            { id: 2, name: 'Товар 2', price: 75 },
-            { id: 3, name: 'Товар 3', price: 150 },
-            { id: 4, name: 'Товар 4', price: 200 },
-            { id: 5, name: 'Товар 5', price: 125 }
-          ],
-          sortedProducts: []
         },
         created() {
           this.sortedProducts = [...this.products];

@@ -529,3 +529,13 @@ margin: 30px;
 .blog_footer {
   margin-top: 50px;
 }
+
+/* blog_details */
+
+.blog_details-news-holder {
+  position: relative;
+}
+
+.main_news {
+  /* position: absolute; */
+}
