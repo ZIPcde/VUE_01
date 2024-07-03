@@ -570,6 +570,28 @@ margin: 30px;
   margin-bottom: 20px;
 }
 
+ol {
+  counter-reset: my-counter;
+  list-style: none;
+  padding-left: 0;
+}
+ol li {
+  counter-increment: my-counter;
+  margin: 0.5em 0;
+  padding-left: 2em;
+  position: relative;
+}
+ol li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  width: 1.5em;
+  font-family: "DM Serif Display", serif;
+  text-align: right;
+  font-weight: 400;
+  color: #CDA274; 
+}
+
 .blog_details-button-holder {
   width: 32%;
 }
