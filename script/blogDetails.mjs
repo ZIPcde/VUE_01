@@ -386,46 +386,50 @@ Vue.component('blog-details-main-news-component', {
             <h2 class="dm-serif-display-regular font_50">{{ expandedArticle.theme }}</h2>
             <img :src="expandedArticle.image_path" alt="Article Image">
             <div class="blog_details_main_news-timeholder">
-            <p class="jost-font font_16">{{ expandedArticle.article_date }}</p>
-            <ul class="nav_links-holder jost-font font_16">
+              <p class="jost-font font_16">{{ expandedArticle.article_date }}</p>
+              <ul class="nav_links-holder jost-font font_16">
                 <li><a href="./index.html">Интерьер /</a></li>
                 <li><a href="about.php"> Домой /</a></li>
                 <li><a href="./blog.html"> Декор</a></li>
-            </ul>
+              </ul>
             </div>
             <p class="jost-font font_22">{{ expandedArticle.main_text }}</p>
           </div>
         </div>
-
         <div class="blog_details-news-holder" v-for="(article, index) in otherArticles" :key="index">
           <div class="simple_news" @click="toggleArticleExpansion(index)">
             <h2>{{ article.theme }}</h2>
             <p>{{ article.article_date }}</p>
           </div>
         </div>
-
-        <div>
-          <button v-for="tag in uniqueTags" :key="tag" @click="filterByTag(tag)">
+      </div>
+        <div class="blog_details-button-holder">
+        <h2 class="dm-serif-display-regular font_25">Тэги</h2>
+          <button class="jost-font font_18"
+            v-for="tag in uniqueTags" 
+            :key="tag" 
+            @click="filterByTag(tag)"
+            :class="{ active: currentTag === tag }">
             {{ tag }}
           </button>
-          <button v-if="currentTag" @click="resetFilter">
+          <button class="jost-font font_18"
+            v-if="currentTag" 
+            @click="resetFilter" 
+            :class="{ active: !currentTag }">
             Сбросить фильтр
           </button>
         </div>
-      </div>
     </header>`
 });
 
 Vue.component('blog-details-header-component', {
-    data() {
-        return {
-            
-        }
-    },
-    template: `
+  data() {
+    return {}
+  },
+  template: `
     <header class="blog_header">
-    <div class="blog_header_img-holder">
-    <img class="blog_header_img" src="./img/BlogDetailsHeader.jpg" alt="blog_kitchen">
-    </div>
+      <div class="blog_header_img-holder">
+        <img class="blog_header_img" src="./img/BlogDetailsHeader.jpg" alt="blog_kitchen">
+      </div>
     </header>`
 });
